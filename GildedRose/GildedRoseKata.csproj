@@ -6,8 +6,4 @@
     <StartupObject>GildedRoseKata.Program</StartupObject>
   </PropertyGroup>
 
-  <ItemGroup>
-    <EditorConfigFiles Include="D:\Git Repos\GildedRose-csharpcore\GildedRose\.editorconfig" />
-  </ItemGroup>
-
 </Project>
