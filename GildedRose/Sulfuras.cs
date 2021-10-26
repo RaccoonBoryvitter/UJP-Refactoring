@@ -8,10 +8,6 @@ namespace GildedRoseKata
     {
         public Sulfuras(Item item) : base(item) { }
 
-        protected override void IncreaseQuality() { }
-
-        protected override void DecreaseQuality() { }
-
         public override void UpdateState() { }
     }
 }

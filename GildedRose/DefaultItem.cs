@@ -8,9 +8,7 @@ namespace GildedRoseKata
     {
         public DefaultItem(Item item) : base(item) { }
 
-        protected override void IncreaseQuality() { }
-
-        protected override void DecreaseQuality()
+        private void DecreaseQuality()
         {
             if (Quality > 0)
                 Quality--;

@@ -18,12 +18,10 @@ namespace GildedRoseKata
             }
         }
 
-        protected override void DecreaseQuality()
+        private void DecreaseQuality()
         {
             if (Quality > 0)
                 Quality -= 2;
         }
-
-        protected override void IncreaseQuality() { }
     }
 }
