@@ -20,11 +20,20 @@ namespace GildedRoseKata
                 if (SellIn <= 5)
                     Quality++;
             }
+            if (Quality > 50)
+            {
+                Quality = 50;
+            }
         }
 
         private void DecreaseQualityToZero() 
         {
             Quality = 0;
+        }
+
+        private void AgeTheSellIn()
+        {
+            SellIn--;
         }
 
         public override void UpdateState()

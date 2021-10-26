@@ -18,10 +18,22 @@ namespace GildedRoseKata
             }
         }
 
+        private void AgeTheSellIn()
+        {
+            SellIn--;
+        }
+
         private void DecreaseQuality()
         {
             if (Quality > 0)
+            {
                 Quality -= 2;
+            }
+
+            if (Quality < 0)
+            {
+                Quality = 0;
+            }
         }
     }
 }
