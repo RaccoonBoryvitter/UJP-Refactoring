@@ -4,13 +4,12 @@ using System.Text;
 
 namespace GildedRoseKata
 {
-    public abstract class ItemWrapper : Item
+    public abstract class ItemWrapper
     {
+        public Item Item { get; set; }
         public ItemWrapper(Item item)
         {
-            Name = item.Name;
-            SellIn = item.SellIn;
-            Quality = item.Quality;
+            Item = item;
         }
 
         public abstract void UpdateState();

@@ -10,37 +10,37 @@ namespace GildedRoseKata
 
         private void IncreaseQuality()
         {
-            if (Quality < 50)
+            if (Item.Quality < Quality.MaxValue)
             {
-                Quality++;
+                Item.Quality++;
                 
-                if (SellIn <= 10)
-                    Quality++;
+                if (Item.SellIn <= 10)
+                    Item.Quality++;
 
-                if (SellIn <= 5)
-                    Quality++;
+                if (Item.SellIn <= 5)
+                    Item.Quality++;
             }
-            if (Quality > 50)
+            if (Item.Quality > Quality.MaxValue)
             {
-                Quality = 50;
+                Item.Quality = Quality.MaxValue;
             }
         }
 
         private void DecreaseQualityToZero() 
         {
-            Quality = 0;
+            Item.Quality = Quality.MinValue;
         }
 
         private void AgeTheSellIn()
         {
-            SellIn--;
+            Item.SellIn--;
         }
 
         public override void UpdateState()
         {
             IncreaseQuality();
             AgeTheSellIn();
-            if (SellIn < 0)
+            if (Item.SellIn < 0)
             {
                 DecreaseQualityToZero();
             }

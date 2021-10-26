@@ -5,16 +5,19 @@ namespace GildedRoseKata
 {
     public class GildedRose
     {
-        public IList<ItemWrapper> Items { get; } 
+        public IList<Item> Items { get; set; } 
         public GildedRose(IList<Item> items)
         {
-            Items = items.Select(i => ItemFactory.CreateNewItem(i)).ToList();
+            // Items = items.Select(i => ItemFactory.CreateNewItem(i)).ToList();
+            Items = items;
         }
 
         public void UpdateQuality()
         {
-            foreach (var item in Items)
+            IList<ItemWrapper> items = Items.Select(i => ItemFactory.CreateNewItem(i)).ToList();
+            foreach (var item in items)
                 item.UpdateState();
+            Items = items.Select(w => w.Item).ToList();
         }
     }
 }

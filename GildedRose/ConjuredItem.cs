@@ -12,7 +12,7 @@ namespace GildedRoseKata
         {
             DecreaseQuality();
             AgeTheSellIn();
-            if (SellIn < 0)
+            if (Item.SellIn < 0)
             {
                 DecreaseQuality();
             }
@@ -20,19 +20,19 @@ namespace GildedRoseKata
 
         private void AgeTheSellIn()
         {
-            SellIn--;
+            Item.SellIn--;
         }
 
         private void DecreaseQuality()
         {
-            if (Quality > 0)
+            if (Item.Quality > Quality.MinValue)
             {
-                Quality -= 2;
+                Item.Quality -= 2;
             }
 
-            if (Quality < 0)
+            if (Item.Quality < Quality.MinValue)
             {
-                Quality = 0;
+                Item.Quality = Quality.MinValue;
             }
         }
     }
