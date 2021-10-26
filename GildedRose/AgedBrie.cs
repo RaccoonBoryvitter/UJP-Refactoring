@@ -8,15 +8,13 @@ namespace GildedRoseKata
     {
         public AgedBrie(Item item) : base(item) { }
 
-        protected override void IncreaseQuality()
+        private void IncreaseQuality()
         {
             if (Quality < 50)
             {
                 Quality++;
             }
         }
-
-        protected override void DecreaseQuality() { }
 
         public override void UpdateState()
         {

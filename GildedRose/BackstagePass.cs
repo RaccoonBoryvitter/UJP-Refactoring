@@ -8,7 +8,7 @@ namespace GildedRoseKata
     {
         public BackstagePass(Item item) : base(item) { }
 
-        protected override void IncreaseQuality()
+        private void IncreaseQuality()
         {
             if (Quality < 50)
             {
@@ -22,7 +22,7 @@ namespace GildedRoseKata
             }
         }
 
-        protected override void DecreaseQuality() 
+        private void DecreaseQualityToZero() 
         {
             Quality = 0;
         }
@@ -33,7 +33,7 @@ namespace GildedRoseKata
             AgeTheSellIn();
             if (SellIn < 0)
             {
-                DecreaseQuality();
+                DecreaseQualityToZero();
             }
         }
 

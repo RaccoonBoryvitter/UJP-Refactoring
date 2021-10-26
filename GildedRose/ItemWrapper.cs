@@ -13,10 +13,6 @@ namespace GildedRoseKata
             Quality = item.Quality;
         }
 
-        protected abstract void IncreaseQuality();
-
-        protected abstract void DecreaseQuality();
-
         protected void AgeTheSellIn()
         {
             SellIn--;
