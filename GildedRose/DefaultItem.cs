@@ -10,27 +10,27 @@ namespace GildedRoseKata
 
         private void DecreaseQuality()
         {
-            if (Quality > 0)
+            if (Item.Quality > Quality.MinValue)
             {
-                Quality--;
+                Item.Quality--;
             }
 
-            if (Quality < 0)
+            if (Item.Quality < Quality.MinValue)
             {
-                Quality = 0;
+                Item.Quality = Quality.MinValue;
             }
         }
 
         private void AgeTheSellIn()
         {
-            SellIn--;
+            Item.SellIn--;
         }
 
         public override void UpdateState()
         {
             DecreaseQuality();
             AgeTheSellIn();
-            if (SellIn < 0)
+            if (Item.SellIn < 0)
             {
                 DecreaseQuality();
             }

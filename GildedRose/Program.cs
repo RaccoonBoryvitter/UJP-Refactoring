@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleTables;
+using System;
 using System.Collections.Generic;
 
 namespace GildedRoseKata
@@ -41,12 +42,15 @@ namespace GildedRoseKata
 
             for (var i = 0; i < 31; i++)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("-------- day " + i + " --------");
-                Console.WriteLine("name, sellIn, quality");
-                foreach (var item in app.Items)
+                Console.ForegroundColor = ConsoleColor.White;
+                var table = new ConsoleTable("Name", "Sells In", "Quality");
+                foreach (var item in Items)
                 {
-                    Console.WriteLine($"{item.Name}, {item.SellIn}, {item.Quality}");
+                    table.AddRow(item.Name, item.SellIn, item.Quality);
                 }
+                table.Write();
                 Console.WriteLine();
                 app.UpdateQuality();
             }
