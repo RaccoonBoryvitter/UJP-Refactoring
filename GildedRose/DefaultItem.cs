@@ -11,7 +11,19 @@ namespace GildedRoseKata
         private void DecreaseQuality()
         {
             if (Quality > 0)
+            {
                 Quality--;
+            }
+
+            if (Quality < 0)
+            {
+                Quality = 0;
+            }
+        }
+
+        private void AgeTheSellIn()
+        {
+            SellIn--;
         }
 
         public override void UpdateState()
